@@ -53,3 +53,7 @@ const backdropEl = document.createElement("IMG");
 backdropEl.src = chrome.runtime.getURL('images/backdrop.jpg');
 backdropEl.classList.add('backdrop');
 document.body.insertBefore(backdropEl, document.body.firstChild);
+
+const gridEl = document.createElement("DIV");
+gridEl.classList.add('grid');
+document.body.insertBefore(gridEl, document.body.firstChild);
