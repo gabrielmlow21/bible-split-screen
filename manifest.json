@@ -26,7 +26,7 @@
     ],
     "web_accessible_resources": [
         {
-          "resources": ["images/backdrop.jpg"],
+          "resources": ["images/backdrop.jpg", "images/bible background.jpg"],
           "matches": ["*://bible.mcgi.org/*", "*://bible.addcit.org/*"]
         }
     ],
