@@ -26,10 +26,6 @@
     ],
     "web_accessible_resources": [
         {
-          "resources": ["images/backdrop.jpg", "images/bible background.jpg"],
-          "matches": ["*://bible.mcgi.org/*", "*://bible.addcit.org/*"]
-        },
-        {
             "resources": ["images/bible-background.jpg"],
             "matches": ["*://bible.mcgi.org/*", "*://bible.addcit.org/*"]
         }
