@@ -1,75 +1,33 @@
-// let verse = "";
-// let version = "";
-// let verseCount = 0;
-// const verseLimit = 2;
-
-// const gridEl = document.createElement("DIV");
-// gridEl.classList.add('grid');
-// gridEl.classList.add('grid-2');
-// document.body.insertBefore(gridEl, document.body.firstChild);
-
-// window.setInterval(function() {
-
-//     const currentVerse = document.getElementById("pVerse").innerText;
-//     const currentVersion = document.getElementById("pTranslation").innerText;
-
-//     if (verse !== currentVerse || version !== currentVersion) {
-
-//         const content = document.getElementById("pContent").innerText != null ? document.getElementById("pContent").innerText : "no content";
-        
-//         verse = currentVerse;
-//         version = currentVersion;
-
-//         if (verseCount >= verseLimit) {
-//             gridEl.removeChild(gridEl.firstElementChild);
-//         } else {
-//             verseCount += 1
-//         }
-        
-//         const verseText = document.createTextNode(verse);
-//         const contentText = document.createTextNode(content);
-//         const versionText = document.createTextNode(version);
-
-//         const bibleContainerEl = document.createElement('div');
-//         const verseEl = document.createElement('div');
-//         const contentEl = document.createElement('div');
-//         const versionEl = document.createElement('div');
-
-//         // const formEl = document.getElementById("form1")
-    
-//         bibleContainerEl.classList.add('bible-container');
-//         verseEl.classList.add('verse');
-//         contentEl.classList.add('content');
-//         versionEl.classList.add('version');
-
-//         bibleContainerEl.classList.add('bible-container-2');
-//         verseEl.classList.add('verse-2');
-//         contentEl.classList.add('content-2');
-//         versionEl.classList.add('version-2');
-    
-//         verseEl.appendChild(verseText);
-//         contentEl.appendChild(contentText);
-//         versionEl.appendChild(versionText);
-
-//         gridEl.appendChild(bibleContainerEl);  
-//         bibleContainerEl.appendChild(verseEl);
-//         bibleContainerEl.appendChild(versionEl);
-//         bibleContainerEl.appendChild(contentEl);
-//         // insertAfter(formEl, cardEl);
-//         // document.body.appendChild(cardEl);  
-//         // cardEl.appendChild(verseEl);
-//         // cardEl.appendChild(contentEl)
-//     }
-
-// }, 1000);
-
-
 let verses = [["", "", ""], ["", "", ""]];
 
 const gridEl = document.createElement("DIV");
 gridEl.classList.add('grid');
 gridEl.classList.add('grid-2'); // FORCED
 document.body.insertBefore(gridEl, document.body.firstChild);
+
+// const footer = document.getElementsByClassName("footer");
+
+// const bible1El = document.createElement("DIV");
+// bible1El.classList.add("bible1");
+
+// const bible1Label = document.createElement("Label");
+// bible1Label.setAttribute("for", "bible1");
+// bible1Label.appendChild(document.createTextNode("Select Bible 1 Verse:"))
+
+// let bible1Select = document.createElement("SELECT");
+// bible1Select.classList.add('bible1-select');
+// bible1Select.setAttribute("name", "bible1");
+// bible1Select.classList.add("bible1Select");
+
+// bible1El.appendChild(bible1Label);
+// bible1El.appendChild(bible1Select);
+
+
+// bible1El.innerHTML += '<label for="bible1">Select verse for Bible 1:<br></label><select name="bible1" class="bible1-select"><option>Default</option></select>';
+// const bible2El = document.createElement("DIV");
+// bible2El.innerHTML += '<label for="bible2">Select verse for Bible 2:<br></label><select name="bible2"><option>Default</option></select>';
+// footer[0].appendChild(bible1El);
+// footer[0].appendChild(bible2El);
 
 window.setInterval(function() {
 
@@ -126,6 +84,17 @@ window.setInterval(function() {
         gridEl.textContent = '';
         gridEl.appendChild(firstBibleContainerEl);  
         gridEl.appendChild(secondBibleContainerEl);  
-    }
 
+        // replaceOptions();
+    }
+    // console.log(verses)
 }, 1000);
+
+
+// function replaceOptions() {
+//     const newBible1Select = document.createElement("SELECT");
+//     bible1Select.classList.add('bible1-select');
+//     bible1Select.setAttribute("name", "bible1");
+//     bible1Select.classList.add("bible1Select");
+//     console.log(verses)
+// }
