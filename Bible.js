@@ -1,12 +1,9 @@
 class Bible {
+    
     constructor(verse, version, content) {
         this.verse = verse;
         this.version = version;
         this.content = content;
-    }
-
-    static createBible() {
-        
     }
 
     get getVerse() {
