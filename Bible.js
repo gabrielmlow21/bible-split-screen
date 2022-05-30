@@ -1,32 +1,36 @@
 class Bible {
-    
+
+    #verse;
+    #version;
+    #content;
+
     constructor(verse, version, content) {
-        this.verse = verse;
-        this.version = version;
-        this.content = content;
+        this.#verse = verse;
+        this.#version = version;
+        this.#content = content;
     }
 
     get getVerse() {
-        return this.verse;
+        return this.#verse;
     }
 
     get getVersion() {
-        return this.version;
+        return this.#version;
     }
 
     get getContent() {
-        return this.content;
+        return this.#content;
     }
 
     set setVerse(verse) {
-        this.verse = verse;
+        this.#verse = verse;
     }
 
     set setVersion(version) {
-        this.version = version;
+        this.#version = version;
     }
 
     set setContent(content) {
-        this.content = content;
+        this.#content = content;
     }
 }
