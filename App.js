@@ -1,7 +1,6 @@
 class App {
 
     #executionInterval = 1000;
-    #totalBible = 1;
     #totalBibleLimit = 4;
     #bibleList = [];
     #bibleContainerEl = document.createElement("DIV");
@@ -21,33 +20,23 @@ class App {
         // if there are no verses yet
         if (this.#bibleList.length === 0) {
             this._addBible(latestVerse, latestVersion, latestContent);
+        } else if (this.#bibleList.length === this.#totalBibleLimit) {
+            // delete last element
+            // add new verse at front
         }
     }
 
-    _addBible(verse, version, content) {
-        const verseText = document.createTextNode(verse);
-        const versionText = document.createTextNode(version);
-        const contentText = document.createTextNode(content);
-
-       
-
-        if (this.#totalBible < this.#totalBibleLimit) {
-            this.#totalBible += 1;
+    // adds a bible to the biblelist
+    _addBibleToList(bible) {
+        if (this.#bibleList.length >= this.#totalBibleLimit) {
+            this.#bibleList.pop();
         }
-
-
-        gridEl.classList.add('grid');
-        document.body.insertBefore(this.#bibleContainerEl, document.body.firstChild);
+        this.#bibleList.unshift(bible);
     }
 
-    _renderBible(verse, version, content) {
+    _renderBible(bible) {
         // creating a bible container that holds the verse, version and content
         const bibleContainerEl = document.createElement('div');
-
-        const verseTextNode = document.createTextNode(verse);
-        const versionTextNode = document.createTextNode(version);
-        const contentTextNode = document.createTextNode(content);
-
         const verseContainerEl = document.createElement('div');
         const versionContainerEl = document.createElement('div');
         const contentContainerEl = document.createElement('div');
@@ -58,9 +47,9 @@ class App {
         versionContainerEl.classList.add('version');
         contentContainerEl.classList.add('content');
 
-        verseContainerEl.appendChild(verseTextNode);
-        versionContainerEl.appendChild(versionTextNode);
-        contentContainerEl.appendChild(contentTextNode);
+        verseContainerEl.appendChild(document.createTextNode(bible.verse));
+        versionContainerEl.appendChild(document.createTextNode(bible.version));
+        contentContainerEl.appendChild(document.createTextNode(bible.content));
 
         bibleContainerEl.appendChild(verseContainerEl);
         bibleContainerEl.appendChild(versionContainerEl);
