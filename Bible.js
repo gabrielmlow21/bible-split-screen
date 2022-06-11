@@ -10,15 +10,15 @@ class Bible {
         this.#content = content;
     }
 
-    get getVerse() {
+    get verse() {
         return this.#verse;
     }
 
-    get getVersion() {
+    get version() {
         return this.#version;
     }
 
-    get getContent() {
+    get content() {
         return this.#content;
     }
 
