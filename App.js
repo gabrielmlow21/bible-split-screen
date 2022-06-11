@@ -6,24 +6,23 @@ class App {
     #bibleContainerEl = document.createElement("DIV");
 
     constructor() {
-        // create container that holds all the Bible
         window.setInterval(function() {
-            this._getBibleVerse();
+            this._getLatestBibleVerse();
+            console.log(this.#bibleList);
         });
     }
 
-    _getBibleVerse() {
+    _getLatestBibleVerse() {
         const latestVerse = document.getElementById("pVerse").innerText;
         const latestVersion = document.getElementById("pTranslation").innerText;
         const latestContent = document.getElementById("pContent").innerText;
 
-        // if there are no verses yet
-        if (this.#bibleList.length === 0) {
-            this._addBible(latestVerse, latestVersion, latestContent);
-        } else if (this.#bibleList.length === this.#totalBibleLimit) {
-            // delete last element
-            // add new verse at front
+        // check if latest verse has been changed
+        if (this.#bibleList.length > 0 && this.#bibleList.length[0].verse == latestVerse && this.#bibleList.length[0].version == latestVersion) {
+            return;
         }
+        const latestBible = new Bible(latestVerse, latestVersion, latestContent);
+        this._addBibleToList(latestBible);
     }
 
     // adds a bible to the biblelist
