@@ -61,5 +61,10 @@ function increaseTotalBibleOnScreen() {
     renderVerses();
 }
 
-
-
+function decreseTotalBibleOnScreen() {
+    if (totalBibleOnScreen <= 1) {
+        return;
+    }
+    bibleCount -= 1;
+    renderVerses();
+}
