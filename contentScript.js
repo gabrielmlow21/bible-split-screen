@@ -1,6 +1,6 @@
 let verses = [];
-const totalBibleLimit = 2;
-let bibleCount = 1;
+const totalBibleLimit = 4;
+let totalBibleOnScreen = 1;
 
 // creating the grid
 const gridEl = document.createElement("DIV");
@@ -53,8 +53,8 @@ function renderVerses() {
     }
 }
 
-function increaseTotalBibleLimit() {
-    if (bibleCount >= totalBibleLimit) {
+function increaseTotalBibleOnScreen() {
+    if (totalBibleOnScreen >= totalBibleLimit) {
         return;
     }
     bibleCount += 1;
