@@ -53,18 +53,20 @@ function renderVerses() {
     }
 }
 
+
 function increaseTotalBibleOnScreen() {
     if (totalBibleOnScreen >= totalBibleLimit) {
         return;
     }
-    bibleCount += 1;
+    totalBibleOnScreen += 1;
     renderVerses();
 }
+
 
 function decreseTotalBibleOnScreen() {
     if (totalBibleOnScreen <= 1) {
         return;
     }
-    bibleCount -= 1;
+    totalBibleOnScreen -= 1;
     renderVerses();
 }
