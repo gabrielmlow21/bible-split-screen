@@ -1,6 +1,21 @@
 body {
-    width: 400px;
-    height: 400px;
+    width: 350px;
     font-family: 'Roboto', sans-serif;
     padding: 5px 10px;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    width: 100%;
+    font-size: medium;
+}
+
+option, select {
+    font-size: medium;
+}
+
+select {
+    padding: 0px 10px 0px 2px;
 }
