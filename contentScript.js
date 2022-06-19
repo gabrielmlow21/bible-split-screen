@@ -8,7 +8,11 @@ gridEl.classList.add('grid');
 gridEl.classList.add('grid-2'); // FORCED
 document.body.insertBefore(gridEl, document.body.firstChild);
 
-window.setInterval(function() {
+
+setInterval(updateVersesList, 1000);
+
+
+function updateVersesList() {
     const currentVerse = document.getElementById("pVerse").innerText;
     const currentVersion = document.getElementById("pTranslation").innerText;
     const currentContent = document.getElementById("pContent").innerText != null ? document.getElementById("pContent").innerText : "no content";  
@@ -19,9 +23,12 @@ window.setInterval(function() {
             content: currentContent
         }
         verses.unshift(bible)
+        chrome.storage.sync.set({
+            verses: verses
+        });
         renderVerses();
     }
-}, 1000);
+}
 
 
 function renderVerses() {
