@@ -26,7 +26,7 @@ window.setInterval(function() {
 
 function renderVerses() {
     gridEl.textContent = '';    // reset content at grid
-    for (let i = 0; i < bibleCount; i++) {
+    for (let i = 0; i < totalBibleOnScreen; i++) {
         // stop rendering if it reaches the verses length
         if (i == verses.length) {
             return;
