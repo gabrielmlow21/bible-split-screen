@@ -1,7 +1,20 @@
-function updateDropdownOptions() {
+verses = []
+
+setInterval(getLatestVerses, 1000);
+
+function getLatestVerses() {
     chrome.storage.sync.get(["verses"], (res) => {
-        console.log(res);
+        if (res.verses.length != verses.length) {
+            verses = res.verses;
+            updateDropdownOptions();
+        }
     })
 }
 
-setInterval(updateDropdownOptions, 1000);
+function updateDropdownOptions() {
+    str = "<option>Default</option>";
+    for (let verse of verses) {
+        str += "<option>" + verse.verse + "</option>";
+    }
+    document.getElementById("bible-1").innerHTML = str;
+}
