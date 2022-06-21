@@ -8,6 +8,8 @@ function updateDropdownOptions() {
         }
         document.getElementById("bible-1").innerHTML = str;
         document.getElementById("bible-2").innerHTML = str;
+        document.getElementById("bible-3").innerHTML = str;
+        document.getElementById("bible-4").innerHTML = str;
     })
 }
 
